@@ -1,7 +1,7 @@
-/* 
- * Basic C program to print text and loop numbers 
- * Author: Tracy Miles
-*/
+/*                                                                           
+ * Basic C program to print text and loop numbers                            
+ * Author: Tracy Miles                                                         
+ */
 
 #include <stdio.h>
 #include <unistd.h>
@@ -15,16 +15,14 @@ int main(void) {
     if((i % 2) == 0){
       printf("%04d ", i);
       for (n = 0; n < 5; n++) {
-	printf(".");
-	fflush(stdout);
-	sleep(1);
+        printf(".");
+        fflush(stdout);
+        sleep(1);
       }
       printf("\n");
-      } else {
-	printf("%04d\n", i);
+    } else {
+      printf("%04d\n", i);
     }
-    }
-  return(0); 
+  }
+  return(0);
 }
-
-
