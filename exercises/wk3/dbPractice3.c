@@ -44,32 +44,16 @@ int fun2(int return_value_function)
         return_value_function = 900 + return_value_function ;
         return return_value_function;
 }
+
 int fun3(int *pass_by_reference) 
 {
         *pass_by_reference = *pass_by_reference + 9001;
         return *pass_by_reference;
 }
 
+//write function to find palindrome of the given number
 bool func4(int n)
 {
-                int given_number = n;
-                int remainder = 0;
-                int temp = 0;
-
-
-                while (n != 0) {
-                        remainder = n % 10;
-                        temp = temp * 10 + remainder;
-                        n /= 10;
-                }
-
-                if (given_number != temp)
-                {
-                        return false;
-                }
-                else
-                {
-                        return true;
-                }
+                
 }
 
