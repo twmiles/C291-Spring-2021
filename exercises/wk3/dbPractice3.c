@@ -1,6 +1,6 @@
 // Program to use pass by value and pass by reference.
 // check if the final return value of your program is a palindrome
-// Number of errors/bugs = 
+
 
 
 #include<stdio.h>
