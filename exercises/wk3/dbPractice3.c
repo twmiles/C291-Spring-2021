@@ -22,7 +22,7 @@ void main() {
 		
 		return 0
 }
-8
+
 
 //the return value of your func should be true / false only
 void func(int n, char w)
