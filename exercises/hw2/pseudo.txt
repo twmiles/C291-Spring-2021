@@ -1,0 +1,99 @@
+Pseudocode
+
+Tracy Miles
+2/3/21
+
+This program is created to allow employees to enter paycode
+
+
+add variables at top
+
+create do while loop
+
+printf( for the menu)
+
+scan for input
+
+do if statement to create input characters
+
+start switch statement
+
+
+case A for administrator
+
+ask for salary
+
+do math
+
+print monthly, weekly, hourly
+
+
+
+case S
+
+ask for salary
+
+ask for overtime hours
+
+do math for over time salary
+
+math for monthly salary and weekly salary
+
+create if statement for whether or not you exceed overtime hours
+
+Print monthly weekly hourly
+
+
+case R
+
+ask for salary
+
+scan
+
+ask for number of extra credits taught
+
+scan
+
+do math for monthly salary
+
+the course pay
+
+weekly salary math
+
+hourly salary math
+
+if statement for extra credits being under 3
+
+if over 3 overtime pay
+
+
+Case J
+ask for credits that are being taught
+
+get weekly, monthly, hourly
+
+
+Case T
+ask for how many 3 credit hour course are they helping with
+
+ask for hours worked
+
+do math
+
+write if statement for overtime
+
+get monthly, weekly, hourly
+
+Case H
+hourly worker
+ask for hourly rate
+ask for hours worked
+
+get weekly, monthly, hourly
+
+
+
+end do while
+
+
+get averages
