@@ -5,7 +5,7 @@
 int main(void){
   char input;
   int num1, num2, result, count = 0;
-  double salary, wksalary, monsalary, ot, hourlyotsalary, hourlyrate, monsalary1, wksalary1, otmonsalary, otwksalary, othourlysalary, overallhourly, otmonsalary1, otwksalary1, hourlyrate1, othours, hoursworked1, ot1, hmonthpay, hwkpay, hwkpayot, rmonthsalcourse, course, rmonthlysal, rweeklysal, rhourly, hrsalary, extracredits, credithours, numofcourses, hrforcourses, creditpay, avgwk, avgmon, avghour, jsalary, jmonthlypay, jweeklypay, jhourly, salary1, salary2, coursepay1, tsalary, twkpay, thourpay, tmonpay, twpay;
+  double salary, wksalary, monsalary, ot, hourlyotsalary, hourlyrate, monsalary1, wksalary1, otmonsalary, otwksalary, othourlysalary, overallhourly, otmonsalary1, otwksalary1, hourlyrate1, othours, hoursworked1, ot1, hmonthpay, hwkpay, hwkpayot, rmonthsalcourse, course, rmonthlysal, rweeklysal, rhourly, hrsalary, extracredits, credithours, numofcourses, hrforcourses, creditpay, avgwk, avgmon, avghour, jsalary, jmonthlypay, jweeklypay, jhourly, salary1, salary2, coursepay1, rweeksalcourse, tsalary, twkpay, thourpay, tmonpay, twpay;
   //salary, weekly salary, monthly salary, over time, hourly over time salary, hourly rate, over time monthly salary, overtime weekly salary
   do {
       printf("Hello! Please select a paycode based on employment type.\n\nPaycode choices:\tAdministrator(A)\n\t\t\tStaff(S)\n\t\t\tRegular Faculty(R)\n\t\t\tAdjunct(J)\n\t\t\tTeaching assistant(T)\n\t\t\tHourly Worker(H)\nEnter choice: ");
@@ -136,6 +136,7 @@ int main(void){
 	  printf("Please choose a valid paycode.");
 	  break;
       
+	}
       }
   }  while(input != 'Q');
   //averages
