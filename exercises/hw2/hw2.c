@@ -5,7 +5,7 @@
 int main(void){
   char input;
   int num1, num2, result, count = 0;
-  double salary, wksalary, monsalary, ot, hourlyotsalary, hourlyrate, monsalary1, wksalary1, otmonsalary, otwksalary, othourlysalary, overallhourly, otmonsalary1, otwksalary1, hourlyrate1, othours, hoursworked1, ot1, hmonthpay, hwkpay, hwkpayot, hrsalary, extracredits, credithours, numofcourses, hrforcourses, creditpay, avgwk, avgmon, avghour, jsalary, jmonthlypay, jweeklypay, jhourly, salary1, salary2, coursepay1, tsalary, twkpay, thourpay;
+  double salary, wksalary, monsalary, ot, hourlyotsalary, hourlyrate, monsalary1, wksalary1, otmonsalary, otwksalary, othourlysalary, overallhourly, otmonsalary1, otwksalary1, hourlyrate1, othours, hoursworked1, ot1, hmonthpay, hwkpay, hwkpayot, rmonthsalcourse, course, rmonthlysal, rweeklysal, rhourly, hrsalary, extracredits, credithours, numofcourses, hrforcourses, creditpay, avgwk, avgmon, avghour, jsalary, jmonthlypay, jweeklypay, jhourly, salary1, salary2, coursepay1, tsalary, twkpay, thourpay, tmonpay, twpay;
   //salary, weekly salary, monthly salary, over time, hourly over time salary, hourly rate, over time monthly salary, overtime weekly salary
   do {
       printf("Hello! Please select a paycode based on employment type.\n\nPaycode choices:\tAdministrator(A)\n\t\t\tStaff(S)\n\t\t\tRegular Faculty(R)\n\t\t\tAdjunct(J)\n\t\t\tTeaching assistant(T)\n\t\t\tHourly Worker(H)\nEnter choice: ");
@@ -57,7 +57,7 @@ int main(void){
 	  rmonthlysal = salary2/10; //this is the salary over a 10 month period
 	  course = 8500; //8500 is the pay for the extra 3 credit hour course.
 	  rmonthsalcourse = ((salary2/10) + (8500/5)); //monthly salary wih extra course. course is divided by 5 because their are 5 months in a semester.
-	  rweeklysal = (salary2/10)/4); //weekly salary (divided monthly salary by 4)
+	  rweeklysal = ((salary2/10)/4); //weekly salary (divided monthly salary by 4)
 	  rweeksalcourse = (((salary2/10) + (8500/5))/4); //weekly salary with extra course. divided monthly extra course by 4.
 	  rhourly = ((salary2/10)/160); //since it is not annual I just divided salary by the 10 months and assumed 40 hours a week, dividing by 160.
 	  if(extracredits < 3){ 
@@ -139,7 +139,7 @@ int main(void){
       }
   }  while(input != 'Q');
   //averages
-  avgwk = (hwkpay + wksalary + wksalary1 + rweeklysal + jweeklysal + twkpay)/3;
+  avgwk = (hwkpay + wksalary + wksalary1 + rweeklysal + jweeklypay + twkpay)/3;
   avgmon = (monsalary + monsalary1 + hmonthpay + rmonthlysal + tmonpay + jmonthlypay)/3;
   avghour = (hrsalary + hourlyrate + hourlyrate1 + rhourly + thourpay + jhourly)/3;
   printf("Average Weekly: %.2lf ", avgwk);
