@@ -19,26 +19,48 @@
  *
  *
  * */
-
+#include<stdio.h> //had to add this
 void printGrade(int score){
 	//print the students grade based on their score in the class
+  if(score > 100 || score < 0) //if the score is over or under the allowed then it will print invalid
+    printf("Invalid");
+  else if(score > 96) //if the score is above 96 then it will be an A+
+    printf("Your grade is : A+");
+  else if(score > 89) //if the score is above a 89 but less than a 97 it will b an A
+    printf("Your grade is : A");
+  else if(score > 79) //if you have scored less than a 90 but more than a 79 it will be a B
+    printf("Your grade is : B");
+  else if(score > 69) //if you have scored less than a 80 but more than a 69 it will be a C
+    printf("Your grade is : C");
+  else //if you have score 69 or below you are failing with an F
+    printf("Your grade is : F"); 
 }
 int main(void){
 	char ch;
-	float score;
-	int assignments;
+	float score, totalscore = 0.0, maxscore = 0.0;; //added two new variables set to 0.0 because it is a float. This is for the totalscore entered and the maxscore total.
+	int assignments, x = 0; //set x to 0 so i can use it in the for loops
 	do {
 		printf("How many assignmnets did you have ? ");
-
+		scanf(" %d", &assignments); //scan for the input
     //get the number of assignmnets from the student
 
 		printf("Enter your score for all assignments : \n" );
-
+		for(x=0;x<assignments;x++) //created a for loop that keeps it going for the amount of assignments the person has
+		  {
+		    scanf(" %f", &score); //scan for the input
+		    totalscore = totalscore + score; //total is the score entered + the score
+		  }
+		printf("Enter the max score for all assignments : \n");
+		for(x=0;x<assignments;x++) //for loop that keep it going for the amount of assignments the person had
+		  {
+		    scanf(" %f", &score); //scan for input
+		    maxscore = maxscore + score; //added this math 
+		  }
     //get the student's score and the max score for each assignment
-
+		
     //calculate the student's percentage in the class using the information you've gathered.
 		int percent;
-
+		percent=(totalscore*1.0/maxscore)*100; //this is calculating the percentage to be used in the print geade function
 		printGrade(percent);
 
 		printf(" \n Do you want to continue? (Y/N) ");

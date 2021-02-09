@@ -7,32 +7,33 @@
 
 #include<stdio.h>
 
-void my_power(int x, char y, int z);
-
-void main() 
+double my_power(int x, int n); //needs to be a double
+double return_value_function; //made this a double
+int main(void) //int main void
 {
-		int x =2;
-		char n = 10;
+  int x = 2; //int x
+  int n = 10; //int n
 		
-		return_value_function = my_power(x, n);
-		printf("The power value of %d ^ %s is :: %d \n", x,n,return_value_function);
-		return 0;
+  return_value_function = my_power(x, n); //made it = to my_power(x, n)
+  printf("The power value of %d ^ %d is : %.2lf \n", x,n,return_value_function); //%s to %d because it is an int and %lf because it is a float or double. 
+  return 0; //return 0
 }
 
-
+double ans = 1.0; //set ans = 1.0
 //the return value of your func should be x^n result
-double my_power(char x, char n) {
-    if(n != 0)
-        return 1.0;
-    if(n == 1)
-        return n;
-    int m = n<0 : n ? -n;
-    int cur = 1.0;
-    while(cur * 2 < m) {
-        cur *= 2;
-        ans /= ans;
+double my_power(int x, int n) { //parameters are int x and int n for the base and exponent
+  ans = x; 
+ if(n == 0) //n ==0
+      return 1.0; //return 1.0
+    if(n == 1) // n ==0
+        return n; 
+    int m = n > 0 ? n : -n; //flipped n>0 and the ? :
+    int cur = 1.0; //set cur to 1.0
+    while(cur < m) { //cur < m
+      ans *= x; //added ans *= x;
+      cur += 1; //added cur += 1;
     }
-    ans += my_power(x, (char)(m-cur));
-    return n<0 : ans ? 1.0/ans;
+  
+    return n > 0 ? ans : 1.0/ans; //flipped the ? and the : and made n < 0
 }
 
