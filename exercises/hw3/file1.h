@@ -1,0 +1,9 @@
+//tracy miles 
+//2/12/2021
+
+
+#include<stdio.h>
+//defining constants
+#define federaltaxrate 0.15;
+#define statetaxrate 0.05;
+#define retirementcont 0.075;

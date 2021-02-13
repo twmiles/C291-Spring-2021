@@ -1,0 +1,100 @@
+//tracy miles 2/12/2021
+
+#include<stdlib.h>
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+#include "file1.h"
+
+double print_statement(int num_of_employees);
+int main() { //main
+
+  print_statement(5);
+} 
+
+//define the function
+double print_statement(int num_of_employees){;
+
+  srand(time(NULL)); //random sales and year
+
+  //setting variables
+  char names[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  int i;
+  float saleall[5];
+  float yearall[5];
+  int sales;
+  int salel = 1000, saleh = 10000;
+  int year;
+  int yearl = 1;
+  int yearh = 30;
+  float com;
+  float bonus;
+  float fedtax;
+  float statetax;
+  float rc;
+  float net;
+  float totalcom, totalbonus, totalfedtax, totalstatetax, totalrt, totalsales, totalnet, totalprofit, monsales, monprofit;
+  //looing through employees
+  for(i = 0; i <= num_of_employees; i++){
+    sales = (rand() % (saleh-salel+1) + salel);
+    saleall[i] = (float)sales;
+    year = (rand() % (yearh-yearl+1) + yearl);
+    yearall[i] = (int)year;
+  }
+  for(i = 0; i < num_of_employees; i++) {
+    totalsales += saleall[i]; 
+  }
+  totalprofit = totalsales * 0.45;
+  //printing out the statement and formatting it
+  printf("MONTHLY STATEMENT \t (JANUARY 2021)\n");
+  printf("%*s", 111, "Bloomington Skating Company\n");
+  printf("%*s", 111, "Bloomington, IN\n");
+  printf("%*s", 110, "Phone: (812)-855-0000");
+
+  printf("\n\nMONTHLY SALES:\t%.2f\n", totalsales);
+  printf("MONTHLY PROFIT: %.2f\n", totalprofit);
+
+
+  printf("==============================================================================================================\n");
+  printf("Name\t\tCommission\t\tBonus\t\tFed W.\t\tST W.\t\tRT\t\tNet Pay\n");
+  printf("--------------------------------------------------------------------------------------------------------------\n");
+
+  //for the years worked calculating bonuses
+  for(i = 0; i <= num_of_employees; ++i) {
+    com = saleall[i] * 0.125;
+
+    if (yearall[i] < 10) {
+      bonus = totalprofit * 0.1;
+    } else if (yearall[i] >= 10 && yearall[i] < 20){
+      bonus = totalprofit * 0.15;
+    } else if (yearall[i] >= 20 && yearall[i] < 30) {
+      bonus = totalprofit * 0.2;
+    } else {
+      bonus = totalprofit * 0.25;
+    }
+    fedtax = (com + bonus) * federaltaxrate;
+    statetax = (com + bonus) * statetaxrate;
+    rc = (com + bonus) * retirementcont;
+    net = ((com + bonus) - fedtax - statetax - rc);
+  
+    totalcom = totalcom + com;
+    totalfedtax = totalfedtax + fedtax;
+    totalstatetax = totalstatetax + statetax;
+    totalrt = totalrt + rc;
+    totalnet = totalnet + net;
+    totalbonus = totalbonus + bonus;    
+  printf("%c\t\t%.2f\t\t\t%.2f\t\t%.2f\t\t%.2f\t\t%.2f\t\t%.2f\n", names[i], com, bonus, fedtax, statetax, rc, net);
+  }
+    
+  printf("---------------------------------------------------------------------------------------------------------------\n");
+
+  printf("Totals\t\t%.2f\t\t\t%.2f\t%.2f\t\t%.2f\t\t%.2f\t\t%.2f\n", totalcom, totalbonus, totalfedtax, totalstatetax, totalrt, totalnet);
+  printf("---------------------------------------------------------------------------------------------------------------\n");
+  //net profit
+  float netprof;
+  netprof = totalprofit - totalbonus;
+
+  printf("Net Profit (Profit - Bonus): %.2f\n", netprof);
+  printf("John Doe, Branch Manager\n");
+
+}
