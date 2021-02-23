@@ -12,10 +12,40 @@ the words (highest likelihood first)
 */
 
 #include <stdio.h>
-
+#include <string.h>
 int main(void) {
+  //arrays
+  char spam[30][10] = {"trap", "fake", "credit", "loan", "easy", "fast", "free", "borrow", "quick", "ready", "card", "money", "now", "sample", "royalty", "limited", "luxury", "investment", "junk", "check", "medicine", "instant", "reduced", "simple", "name", "spam", "large", "big", "best", "great"};
+  char message[10000];
+  char check = strstr(spam, message);
+  int score = 0;
+  int i = 0;
+  char c;
+  char spamf[10000];
+  printf("please enter a message then press enter: \n");
+
+  for(i = 0; c != '\n'; i++) {
+    scanf("%s%c", &message[i], &c);
+  }
 
 
+  for (i = 0; i<= message[i]; i++) {
+    if(check != "NULL") {
+      score++;
+      spamf[i] = check;
+    }
+  }
+  printf("%s", spamf);
+  if (score > 50) {
+    printf("%d spam keywords found, this is most likely spam. beware.", score);
+  }
+  if (score <= 50 && score > 20) {
+
+  printf("%d spam keywords found, there is a chance of spam here", score); 
+  }
+  else {
+    printf("%d spam keywords found, this probably is alright", score);
+  } 
 
 	return 0;
 }
