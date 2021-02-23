@@ -10,7 +10,8 @@ the message, add a point to the message’s “spam score.” Next, rate the likelihoo
 is spam, based on the number of points it received. Print your results in a tabulator format showing 
 the words (highest likelihood first)
 */
-
+//tracy miles 
+//02/22/21
 #include <stdio.h>
 #include <string.h>
 int main(void) {
