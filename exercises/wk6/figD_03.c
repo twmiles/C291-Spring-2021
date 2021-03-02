@@ -4,7 +4,8 @@
 // To implement the new sort function without recursion, where the length of the array is an arbitrary number, 
 // Keep merging adjacent regions whose size is a power of 2, and pay special attention to the last area whose size is less.
 // Test to make sure that your results are correct.
- 
+//tracy miles
+//03/01/2021 
 #define SIZE 10
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,11 +18,11 @@ void merge(int array[], size_t left, size_t middle1,
    size_t middle2, size_t right);
 void displayElements(int array[], size_t length);
 void displaySubArray(int array[], size_t left, size_t right);
-
+void sortSubArrayIter(int array[], size_t low, size_t high);
 int main(void)
 {
    int array[SIZE]; // declare the array of ints to be sorted 
-    
+  
    srand(time(NULL)); // seed the rand function 
     
    for (size_t i = 0; i < SIZE; i++) {
@@ -39,9 +40,18 @@ int main(void)
 // function that merge sorts the array 
 void mergeSort(int array[], size_t length)
 {
-   sortSubArray(array, 0, length - 1);
+  // sortSubArray(array, 0, length - 1);
+  sortSubArrayIter(array, 0, length - 1);
 } 
 
+void sortSubArrayIter(int array[], size_t low, size_t high)
+{
+  int x, i;
+  int size = high - low;
+  for(i = 1; i < size; i++){
+    merge(array, low, size-i-1, size-i, high); 
+  }  
+}
 // function that sorts a piece of the array 
 void sortSubArray(int array[], size_t low, size_t high)
 {
