@@ -1,0 +1,80 @@
+//tracy miles
+//03/19/21
+#include<stdio.h>
+#include<stdlib.h>
+int main(void) {
+//a
+int* iPtr = malloc(sizeof(int));
+
+//b
+double* dPtr = malloc(2 * sizeof(double));
+
+//c
+//allocate memory
+int* aiPtr = malloc(5 * sizeof(int));
+
+ *aiPtr = 27;
+ *(aiPtr + 1) = 12;
+ *(aiPtr + 2) = 93;
+ *(aiPtr + 3) = 44;
+ *(aiPtr + 4) = 38;
+ int i;
+ for(i = 0; i <= 5; i++) {
+   printf("%d ", *(aiPtr + i));
+ }
+ printf("\n");
+
+ //d
+ char* cPtr = malloc(20 * sizeof(char));
+
+ *cPtr = 'T';
+ *(cPtr + 1) = 'r';
+ *(cPtr + 2) = 'a';
+ *(cPtr + 3) = 'c';
+ *(cPtr + 4) = 'y';
+ *(cPtr + 5) = 'M';
+ *(cPtr + 6) = 'i';
+ *(cPtr + 7) = 'l';
+ *(cPtr + 8) = 'e';
+ *(cPtr + 9) = 's';
+ *(cPtr + 10) = 'i';
+ *(cPtr + 11) = 's';
+ *(cPtr + 12) = 'A';
+ *(cPtr + 13) = 'w';
+ *(cPtr + 14) = 'e';
+ *(cPtr + 15) = 's';
+ *(cPtr + 16) = 'o';
+ *(cPtr + 17) = 'm';
+ *(cPtr + 18) = 'e';
+ *(cPtr + 19) = '!';
+ 
+ //print
+ for(i = 0; i <= 20; i++) {
+   printf("%c ", *(cPtr + i));
+ }
+ printf("\n");
+
+  
+//e
+int x;
+int k = 5, j = 5;
+char * twenty_five_char_ptr = (char*)malloc(25*sizeof(char));
+char ** twenty_five_char_ptr2 = &twenty_five_char_ptr;
+for(k=0; k<5; k++) {
+  for(j=0; j<5; j++) {
+    *(*(twenty_five_char_ptr2+k)+j) = 'A' +j+k;
+  }
+ }
+for(k=0; k<5; k++) {
+  for(j=0; j<5; j++) {
+    printf("%c ", *(*(twenty_five_char_ptr2+k)+j));
+  }
+  printf("\n");
+ }
+free(twenty_five_char_ptr);
+
+//f
+int * d_array = (int*)malloc(25 * sizeof(int));
+
+return 0;
+}
