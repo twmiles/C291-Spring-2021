@@ -9,6 +9,10 @@ Fix the code so that the program works as expected. The code has around 8 errors
 There are no intended errors in any of the print or the main function 
 
 */
+
+//tracy miles
+//03/22/21
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -24,27 +28,29 @@ struct Student
 
 struct Node
 {
-    struct Student *student;
-    struct Node *next;
+   struct Student *student;
+   struct Node *next;
 };
 
 
 // allocates memory for a new node in a linked list and returns a pointer
 struct Node *createNode()
 {
-    struct Node *studentNode = (struct Node *)malloc(sizeof(struct Student));
+    struct Node *studentNode = (struct Node*)malloc(sizeof(struct Student));
+    studentNode->student;
+    studentNode->next;
     return studentNode;
 }
 
 
 // allocates memory for a new student and returns a pointer
-struct Student createStudent(char *firstName, char *lastName, int rollNumber, float marks)
+struct Student *createStudent(char *firstName, char *lastName, int rollNumber, float marks) //added * here
 {
-    struct Student *student = (struct Node *)malloc(sizeof(struct Student));
-    strcpy(student.firstName, firstName);
-    strcpy(student.lastName, lastName);
-    student.rollNumber = rollNumber;
-    student.marks = marks;
+    struct Student *student = (struct Node*)malloc(sizeof(struct Student));
+    strcpy(student->firstName, firstName);
+    strcpy(student->lastName, lastName);
+    student->rollNumber = rollNumber;
+    student->marks = marks;
     return student;
 }
 
@@ -123,11 +129,11 @@ int getHighestMarks(struct Node *head)
     float max = 0;
     while (head != NULL)
     {
-        if (max > head->student.marks)
+        if (max > head->student->marks)
         {
-            max = head->student.marks;
+            max = head->student->marks;
         }
-        head = head-=>next;
+        head = head->next;
     }
     return max;
 }
@@ -143,7 +149,7 @@ struct Student *getStudentWithMedianMarks(struct Node *head)
 
     int totalNumberOfStudents = 0;
 
-    struct Node * temp = head;
+    struct Node *temp = head;
 
     while (temp->next != NULL)
     {
@@ -174,7 +180,7 @@ void getStudentsWithLessThanFifty(struct Node *head)
         return;
     }
 
-    struct Node temp = head;
+    struct Node * temp = head;
     while (temp != NULL)
     {
         if (temp->student->marks < 50)
@@ -189,7 +195,7 @@ void getStudentsWithLessThanFifty(struct Node *head)
 int main()
 {
 
-    int option = 5;
+    int option;
     struct Node *head = createNode();
 
     int highestMarks = 0;
@@ -218,7 +224,6 @@ int main()
 
         case 4:
             getStudentsWithLessThanFifty(head);
-
             break;
 
         case 5:
