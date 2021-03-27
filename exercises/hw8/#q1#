@@ -1,0 +1,4 @@
+//tracy miles
+//03/26/21
+
+struct patientinformation { char patient_name[ 20]; char*abbreviated_name; unsigned int age; struct { char phone_number[ 11 ]; char address[ 60 ]; char city[ 20]; char state[ 3 ]; int zipCode;} physical_address; boolistested; struct { char*test_date; boolistested_positive; } covid_results; } healthrecord, *healthrecord_ptr;healthrecord_ptr = &healthrecord;
